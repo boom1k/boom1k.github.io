@@ -18,6 +18,34 @@
   min-height: 100%;
   position: fixed;
 }
+.center {
+  top:50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%, 0);
+  position: absolute;
+}
+
+.nameNeksio {
+  white-space: nowrap!important;
+  color: white!important;
+  text-shadow: none!important;
+  font-weight: 800!important;
+  background: linear-gradient(to right, var(--white), var(--blue), var(--pink), var(--white));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 2.5s linear infinite;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
 
 .next {
   position: fixed;
