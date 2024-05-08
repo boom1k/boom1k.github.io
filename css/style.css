@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    user-select: none;
+    cursor: none;
+    cursor: url('../images/cursor.png'), auto;
+}
+
+#pressToEnter {
+    font-family: 'Courier New', monospace;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+/*z-ined je proste neco jak mas na jake pozici je to displaynute v poradi learn here i guess https://www.w3schools.com/cssref/pr_pos_z-index.php */
+video{
+    z-index: -3;
+}
+
+#bgvid{
+    width: 100%;
+    height: 100%;
+}
+
+#centeredImage {
+    /*Suba tought me this fr asi jedine co jsem uzil*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: none;
+    border: 1.3px solid #8bff97;
+    border-radius: 0.8rem;
+}
