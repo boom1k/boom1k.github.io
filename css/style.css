@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: rgb(4,4,8);
     overflow: hidden;
     user-select: none;
     cursor: none;
@@ -26,6 +26,9 @@ body {
 }
 /*z-ined je proste neco jak mas na jake pozici je to displaynute v poradi learn here i guess https://www.w3schools.com/cssref/pr_pos_z-index.php */
 video{
+    z-index: -3;
+}
+#particles-js{
     z-index: -3;
 }
 
