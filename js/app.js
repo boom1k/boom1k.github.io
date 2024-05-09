@@ -50,3 +50,8 @@ function startAudio() {
         pressToEnter.style.display = "none";
     }, 1000);
 }
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
