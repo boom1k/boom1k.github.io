@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: rgb(4,4,8);
     overflow: hidden;
     user-select: none;
     cursor: none;
@@ -28,6 +28,9 @@ body {
 video{
     z-index: -3;
 }
+#particles-js{
+    z-index: -3;
+}
 
 #bgvid{
     width: 100%;
@@ -43,4 +46,6 @@ video{
     max-width: 100%;
     max-height: 100%;
     pointer-events: none;
+    border: 1.3px solid #8bff97;
+    border-radius: 0.8rem;
 }
