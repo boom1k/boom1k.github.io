@@ -5,6 +5,7 @@ body {
     user-select: none;
     cursor: none;
     cursor: url('../images/cursor.png'), auto;
+    font-family: 'Courier New', monospace;
 }
 
 #pressToEnter {
@@ -28,8 +29,11 @@ body {
 video{
     z-index: -3;
 }
+/*why 120% because when its 100% only the particles doesnt go all the way down idk why keep it like this  */
 #particles-js{
     z-index: -3;
+    width: 120%;
+    height: 120%;
 }
 
 #bgvid{
@@ -37,12 +41,25 @@ video{
     height: 100%;
 }
 
+.bar{
+    position: fixed;
+    top: 45%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+#link1{
+    color: #8bfff5;
+    text-decoration: none;
+    text-align: center;
+}
 
 #button {
     /*Suba tought me this fr asi jedine co jsem uzil*/
     position: fixed;
     top: 70%;
-    left: 30%;
+    left: 33.3%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100%;
@@ -62,7 +79,7 @@ video{
     /*Suba tought me this fr asi jedine co jsem uzil*/
     position: fixed;
     top: 70%;
-    left: 70%;
+    left: 66.6%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100%;
@@ -84,7 +101,7 @@ video{
     /*Suba tought me this fr asi jedine co jsem uzil*/
     position: fixed;
     top: 50%;
-    left: 30%;
+    left: 33.3%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100%;
@@ -97,7 +114,7 @@ video{
     /*Suba tought me this fr asi jedine co jsem uzil*/
     position: fixed;
     top: 50%;
-    left: 70%;
+    left: 66.6%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100%;
