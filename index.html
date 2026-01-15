@@ -1,43 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#8bff97">
-    <meta property="og:title" content="Maxo">
-    <meta property="og:description" content="maxos-bio">
-    <meta property="og:image" content="media/srdce.png">
-    <meta property="og:site_name" content="maxos.suba">
-    <meta property="og:url" content="https://maxos.suba">
-    <link rel="icon" type="image/png" sizes="166x166" href="media/srdce.png">
-    <link rel="stylesheet" href="css/style.css">
+    <title>SuperVec</title>
+    <link rel="stylesheet" href="1.css">
 </head>
 
 <body>
-    <div id="pressToEnter">
-        <p id="enterText" onclick="startAudio()">&gt; click to enter &lt;</p>
+
+    <div class="card">
+        <h1>Url Zkracovač</h1>
+        <div class="wrapper">
+            <div class="top_child">
+                <input type="url" id="urlInput" placeholder="Zadejte URL k zkrácení" required>
+                <button onclick="shorten()">Zkrátit URL</button>
+            </div>
+        </div>
+        <div id="result" class="wrapper">
+            <div class="wrapper">
+                <div class="bottom_child">
+                    <input type="text" id="shortUrl" readonly>
+                    <button class="copy_btn" onclick="copy()">Kopírovat</button>
+                    <button class="dlt_btn" onclick="delete1()">Delete</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <audio id="audio" loop="">
-        <source src="media/song.mp3" type="audio/mp3">
-    </audio>
-    <div class="bar">
-    <a href="https://discord.gg/allison" target="_blank" id="link1">My other projects</a>
-    </div>
-    <img id="centeredImage" src="https://lanyard.cnrad.dev/api/1275925623017050235?bg=transparent&animated=true&hideBadges=false&idleMessage=Prolly Sleeping" alt="Centered Image1">
-    <a href="https://discord.com/users/1083842719715180685" id="button" target="_blank">&gt; Add me &lt;</a>
-    <div id="particles-js"></div>
-    <script src="js/particles.js"></script>
-    <!-- <video autoplay muted loop id="bgvid">
-        <source src="media/vlada.mp4" type="video/mp4">
-      </video>
-    -->  
-    <script src="js/app.js"></script>
+
     <script>
-        var audio = document.getElementById("audio");
-        audio.volume = 0.10;
-      </script>
+        async function shorten() {
+            const input = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!input) return;
+
+            try {
+
+                const response = await fetch(`https://is.gd/create.php?format=json&url=${encodeURIComponent(input)}`);
+                const data = await response.json();
+
+                if (data.shorturl) {
+                    document.getElementById('shortUrl').value = data.shorturl;
+                    resultDiv.style.display = 'block';
+                    localStorage.setItem("url_store", data.shorturl);
+                    const url_store1 = localStorage.getItem("url_store");
+                }
+                else if (data.url_store1) {
+                    document.getElementById('shortUrl').value = data.url_store;
+                    resultDiv.style.display = 'block';
+
+                } else {
+                    alert("Chyba při zkracování URL.");
+                }
+            } catch (error) {
+                alert("Chyba při komunikaci s API.");
+            }
+        }
+
+        function copy() {
+            const copyText = document.getElementById("shortUrl");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Zkopirovane");
+        }
+        function delete1() {
+            localStorage.removeItem("url_store");
+            alert("Smazano");
+        }
+        function checkandprint() {
+            const url_store1 = localStorage.getItem("url_store");
+            if (url_store1) {
+                document.getElementById('shortUrl').value = url_store1;
+                document.getElementById('result').style.display = 'block';
+            }
+        }
+        window.onload = checkandprint;
+    </script>
+
 </body>
 
 </html>

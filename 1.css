@@ -1,0 +1,121 @@
+:root {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    width: 600px
+}
+
+h1 {
+    color: #ff8c00;
+    font-size: 24px;
+}
+
+input {
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: white;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+    display: flex;
+
+}
+
+input:focus {
+    border-color: #ff8c00;
+}
+
+#urlInput {
+    margin-bottom: 15px;
+
+}
+
+button {
+    width: 300px;
+    padding: 12px;
+    background-color: #ff8c00;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    height: 40px;
+}
+
+button:hover {
+    background-color: #e67e00;
+    transform: translateY(-2px);
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.top_child {
+    padding : 10px;
+    border: 2px solid #ff8c00;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    border-radius: 8px;
+}
+
+.bottom_child { 
+    padding : 10px;
+    border: 2px solid #ff8c00;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 8px;
+}
+
+.bottom_child * {
+    margin: 5px;
+}
+
+#result {
+    margin: 25px;
+    border-width: 1px 0px 1px 0px; 
+    border-style: solid;
+    border-color: #333;
+    display: none;
+}
+/*  */
+.copy_btn {
+    background-color: transparent;
+    color: #ff8c00;
+    border: 1px solid #ff8c00;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.copy_btn:hover {
+    background-color: #ff8c00;
+    color: black;
+}
+
